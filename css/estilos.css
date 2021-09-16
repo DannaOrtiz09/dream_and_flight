@@ -1,0 +1,66 @@
+  .flex-container {
+    display: flex;
+  }
+  
+  .flex-container > div {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  
+  .left {
+    background-color: #e5e5e5;  
+    width: 20%;
+    text-align: center;
+  }
+  
+  .main {
+    width: 60%;
+    text-align: justify;
+  }
+  
+  .right {
+    background-color: #e5e5e5;
+    width: 20%;
+    text-align: center; 
+  }
+
+  footer{
+    background-color:#e5e5e5;
+    text-align:center;
+  }
+  
+  @media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width: 100%;
+    }
+  }
