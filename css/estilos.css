@@ -1,13 +1,6 @@
-  .flex-container {
-    display: flex;
-  }
-  
-  .flex-container > div {
-    margin: 10px;
-    padding: 20px;
-    font-family: 'calibri';
-    font-size: 20px;
-  }
+  * {
+   box-sizing: border-box;
+ }
 
   ul {
     list-style-type: none;
@@ -29,90 +22,7 @@
     padding: 14px 16px;
     text-decoration: none;
   }
-    
-  .left {
-    background-color: #e5e5e5;  
-    width: 20%;
-    text-align: center;
-  }
-  
-  .main {
-    width: 60%;
-    text-align: justify;
-  }
-  
-  .right {
-    background-color: #e5e5e5;
-    width: 20%;
-    text-align: center; 
-  }
 
-  footer{
-    padding: 20px;
-    text-align:center;
-    font-family: 'calibri';
-  }
-  
-  h1{
-    font-family:'Brush Script MT', cursive;
-    color: white;
-    font-size: 55px;
-  }
-
-  h2{
-    text-align:center;
-    font-family: 'calibri';
-    color: #24303c;
-  }
-
-  .registro{        
-    background: #24303c;
-  }
-
-  .container {
-    border-radius: 5px;
-    background-color:  #f2f2f2;
-    padding: 10px;
-    width:50%; 
-    margin:0 auto;
-  }
-
-  .form_registro{
-    width:100%; 
-    margin:0 auto;
-  }
-
-  input[type=text], input[type=email], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: 'calibri';
-    color:  #24303c;
-  }
-
-  label {
-    font-family: 'calibri';
-    color:  #24303c;
-    font-weight: bold;
-  }
-
-  input[type=submit] {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #1f53c5;
-    font-family: 'calibri';
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-  }
-  
   .logo {
     float: left;
     margin-right: 0px;
@@ -129,19 +39,23 @@
   button { 
     font-family: 'calibri';
     font-size: 15px;
-  }
+  } 
 
-  .centered_button{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-  }
-  
-
-  .footer_registro {
-    text-align:center;
-    font-family: 'calibri';
+  h1{
+    font-family:'Brush Script MT', cursive;
     color: white;
+    font-size: 55px;
+  }
+
+  h2{
+    text-align: center;
+    font-family: 'calibri';
+    color: #24303c;
+  }
+
+  body {
+    font-family: 'calibri';
+    font-size: 15px;
   }
 
   .photo {
@@ -166,9 +80,82 @@
     min-width: 100%;
   }
 
+  footer{
+    padding: 20px;
+    text-align:center;
+    font-family: 'calibri';
+  }
+
+  .registro{        
+    background: #24303c;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color:  #f2f2f2;
+    padding: 20px 70px 20px 70px;
+    width: 40%;
+    margin:0 auto;
+  }
+
+  .form_registro{
+    width:100%; 
+    margin:0 auto; 
+  }
+
+  .form-field input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'calibri';
+    color:  #24303c;
+  }
+
+  .form-field label {
+    font-family: 'calibri';
+    color:  #24303c;
+    font-weight: bold;
+  }
+
+  .form-field.error input {
+    border-color:  #D8000C;
+  }
+
+  .form-field.success input {
+    border-color: #28a745;
+  }
+
+  span {
+    font-size: 10px;
+    color: #D8000C;
+  }
+
+  input[type=submit] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #1f53c5;
+    font-family: 'calibri';
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+  } 
+
+  .footer_registro {
+    text-align:center;
+    font-family: 'calibri';
+    color: white;
+    font-size: 15px;
+  }
+
   /* Responsive layout */
   @media screen and (max-width: 600px) {
-    .menu, .main, .right {
+    body, .container {
       width: 100%;
     }
   }

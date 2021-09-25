@@ -12,35 +12,41 @@
 		<a href="index.html"><img img src="imgs/avion_nubes.png" alt="avion_nubes" class="logo"></a>
 		<h1 class=brand>Dream & Flight</h1>
 	</header>
-	<div class="container">	
-		<div class="container">
-			<h2 class="h2_registro">Registro</h2>
-			<form action="" id="form-registro" class="form_registro">
-				<div>
-					<label for="username">Username <br>
-						<input type="text" id="username">
-					</label>
-				</div>
-				<div>
-					<label for="correo">Correo <br>
-						<input type="email" id="correo">
-					</label>
-				</div>
-				<div>
-					<label for="contrasena">Contraseña <br>
-						<input type="password" id="contrasena">
-					</label>
-				</div>
-				<div>
-					<label for="confirmar_contrasena">Confirmar contraseña <br>
-						<input type="password" id="confirmar_contrasena">
-					</label>
-				</div>
-				<div class="centered_button">
-					<input type="submit" id="btn-submit-form" value="Registrar">
-				</div>
-			</form>
-		</div>
+	<div class="container">
+		<h2 class="h2_registro">Registro</h2>
+		<form id="form-registro" class="form_registro">
+			<div class="form-field">
+				<label for="username">Username
+					<input type="text" id="username">
+				</label>
+				<span id="error_user"></span>
+			</div>
+			<br>
+			<div class="form-field">
+				<label for="correo">Correo
+					<input type="email" id="correo">
+				</label>
+				<span id="error_email"></span>
+			</div>
+			<br>
+			<div class="form-field">
+				<label for="contrasena">Contraseña
+					<input type="password" id="contrasena">
+				</label>
+				<span id="error_pass">
+			</div>
+			<br>
+			<div class="form-field">
+				<label for="confirmar_contrasena">Confirmar contraseña
+					<input type="password" id="confirmar_contrasena">
+				</label>
+				<span id="error_pass2"></span>
+			</div>
+			<br>
+			<div class="form-field">
+				<input type="submit" id="btn-submit-form" value="Registrar">
+			</div>
+		</form>
 	</div>
 	<footer class="footer_registro">
         <address>
@@ -49,6 +55,7 @@
             Colombia
 			© copyright Dream & Flight
         </address>
-    </footer>    
+    </footer>
+	<script type="text/javascript" src="js/form2.js"></script>    
 </body>
 </html>
