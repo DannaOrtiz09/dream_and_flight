@@ -43,6 +43,6 @@ function checkConfirmContrasena (valor1, valor2){
       }  
 };
 
-module.exports = {checkUsername, checkCorreo, checkContrasena, checkConfirmContrasena}
+//module.exports = {checkUsername, checkCorreo, checkContrasena, checkConfirmContrasena}
 
 
