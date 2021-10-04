@@ -1,78 +1,65 @@
-var registros = [];
 
-function agregarRegistro() {
-
-    var reg = []
-
+var registros =[];
+function agregarRegistro(){
+    var retorno=[];
     var username;
     var correo;
-    var contrasena; 
+    var contrasena;
+    user=document.getElementById('username');
+    
 
-    user = document.getElementById('username');
-    if (user!=null){
-        username = user.value;
+    if (user==null){
+        user='';
     }
     else{
-        username = '';
+        usuario=user.value
     }
-
-    email = document.getElementById('correo');
-    if (email !=null){
-        correo = email.value;
-    }
-    else{
-        correo = '';
-    }
-
-    password = document.getElementById('contrasena');
-    if (password !=null){
-        contrasena = password.value;
+    email=document.getElementById('correo');
+   
+    
+    if(email==null){
+        email='';
     }
     else{
-        contrasena = '';
+        correo=email.value
     }
-
-    reg.push(user);
-    reg.push(email);
-    reg.push(password);
-    registros.push(reg);
-
-    console.log(registros);
+    password=document.getElementById('contrasena');
+    if(password==null){
+        password='';
+    }
+    else{
+        contrasena=password.value
+    }
+    retorno.push(usuario);
+    retorno.push(correo);
+    retorno.push(contrasena);
+    console.log(retorno);
+    registros.push(retorno);
 }
 
+function obtenerUsername(arreglo){
+    var retorno=[];
 
-function obtenerUsername(registros) {
-    var usuario = [];
-    if (registros != null) {
-        for (var i=0; i<registros.length; i++) {
-            if (/^[a-zA-Z0-9]/.test(registros[i][0])) {
-                usuario.push(registros[i]);
-            }
-        } 
+    for (i=0;i<arreglo.length;i++){
+        if (/[a-zA-Z]/.test(arreglo[i]) && /[0-9]/.test(arreglo[i])){
+            if (!(/hotmail\.com/.test(arreglo[i]))){
+            retorno.push(arreglo[i]);
+            }   
+        }
     }
-    console.log(usuario);
-    return usuario;
-}
+    console.log(retorno);
+    return retorno;
 
-function filtrarCorreo(registros) {
-    var correo_electronico = [];
-    if (registros != null) {
-        for (i=0; i<registros.length; i++) {
-            if (/hotmail.com/.test(registros[i][1])) {
-                correo_electronico.push(registros[i]);
-            }
-        } 
+}
+function filtrarCorreo(arreglo){
+    var retorno=[];
+
+    for (i=0;i<arreglo.length;i++){
+        if (/hotmail\.com/.test(arreglo[i])){
+            retorno.push(arreglo[i]);
+        }
     }
-    console.log(correo_electronico);
-    return correo_electronico;
+    console.log(retorno);
+    return retorno;
 }
-
-/*const form = document.getElementById('form-registro');
-form.addEventListener('submit', function (e) {      
-    e.preventDefault();
-    agregarRegistro();
-    obtenerUsername(dataBase);
-    filtrarCorreo(dataBase);
-});*/
-
-module.exports = {registros, agregarRegistro, obtenerUsername, filtrarCorreo}
+module.exports={registros,filtrarCorreo,obtenerUsername,agregarRegistro}

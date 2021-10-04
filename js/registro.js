@@ -1,34 +1,77 @@
+var registros = [];
 
-const redex={
-    user_l:/[a-zA-Z]/,
-    user_n:/[0-9]/,
-    correo:/hotmail\.com/,
-}
-var array =[];
-function agregarRegistro(){
-    array.push()
-}
-function obtenerUsername(arreglo){
-    var retorno=[];
+function agregarRegistro() {
 
-    for (i=0;i<arreglo.length;i++){
-        if (redex.user_l.test(arreglo[i]) && redex.user_n.test(arreglo[i])){
-            retorno.push(arreglo[i]);
-        }
+    var reg = []
+
+    var username;
+    var correo;
+    var contrasena; 
+
+    user = document.getElementById('username');
+    if (user!=null){
+        username = user.value;
     }
-    console.log(retorno);
-    return retorno;
-
-}
-function filtrarCorreo(arreglo){
-    var retorno=[];
-
-    for (i=0;i<arreglo.length;i++){
-        if (redex.correo.test(arreglo[i])){
-            retorno.push(arreglo[i]);
-        }
+    else{
+        username = '';
     }
-    console.log(retorno);
-    return retorno;
+
+    email = document.getElementById('correo');
+    if (email !=null){
+        correo = email.value;
+    }
+    else{
+        correo = '';
+    }
+
+    password = document.getElementById('contrasena');
+    if (password !=null){
+        contrasena = password.value;
+    }
+    else{
+        contrasena = '';
+    }
+
+    reg.push(username);
+    reg.push(correo);
+    reg.push(contrasena);
+    registros.push(reg);
+    console.log(registros);
 }
-//module.exports={filtrarCorreo,obtenerUsername,agregarRegistro}
+
+
+function obtenerUsername(registros) {
+    var usuario = [];
+    if (registros != null) {
+        for (var i=0; i<registros.length; i++) {
+            if (/[a-zA-Z]/.test(registros[i][0]) && /[0-9]/.test(registros[i][0])) {
+                usuario.push(registros[i][0]);
+            }
+        } 
+    }
+    console.log(usuario);
+    return usuario;
+}
+
+function filtrarCorreo(registros) {
+    var correo_electronico = [];
+    if (registros != null) {
+        for (i=0; i<registros.length; i++) {
+            if (/hotmail.com/.test(registros[i][1])) {
+                correo_electronico.push(registros[i][1]);
+            }
+        } 
+    }
+    console.log(correo_electronico);
+    return correo_electronico;
+}
+
+const form = document.getElementById('form-registro');
+form.addEventListener('submit', function (e) {      
+    e.preventDefault();
+    agregarRegistro();
+    obtenerUsername(registros);
+    filtrarCorreo(registros);
+});
+
+//module.exports = {registros, agregarRegistro, obtenerUsername, filtrarCorreo}
